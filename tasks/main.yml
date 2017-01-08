@@ -1,0 +1,6 @@
+---
+
+- name: Install Supervisord
+  package:
+    name="{{ supervisord_package }}"
+    state="present"
