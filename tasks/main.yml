@@ -22,3 +22,8 @@
     group="root"
   with_items: "{{ supervisord_programs }}"
   notify: restart supervisord
+
+- name: Start On Boot
+  service:
+    name="supervisord"
+    enabled="yes"
