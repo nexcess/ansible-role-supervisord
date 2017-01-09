@@ -4,7 +4,7 @@ Installs & configures Supervisord.
 
 ## Role Variables
 
-See `defaults/main.yml`.
+See `defaults/main.yml`, specifically the supervisord_programs variable which controls all program variables.
 
 ## Dependencies
 
