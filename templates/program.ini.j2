@@ -1,0 +1,75 @@
+[program:{{ item.name }}]
+command={{ item.command }}
+numprocs={{ item.numprocs }}
+{% if process_name in item %}
+process_name={{ item.process_name }}
+{% endif %}
+{% if environment in item %}
+environment={{ item.environment }}
+{% endif %}
+{% if directory in item %}
+directory={{ item.directory }}
+{% endif %}
+{% if umask in item %}
+umask={{ item.umask }}
+{% endif %}
+{% if priority in item %}
+priority={{ item.priority }}
+{% endif %}
+{% if autostart in item %}
+autostart={{ item.autostart }}
+{% endif %}
+{% if autorestart in item %}
+autorestart={{ item.autorestart }}
+{% endif %}
+{% if startsecs in item %}
+startsecs={{ item.startsecs }}
+{% endif %}
+{% if startretries in item %}
+startretries={{ item.startretries }}
+{% endif %}
+{% if exitcodes in item %}
+exitcodes={{ item.exitcodes }}
+{% endif %}
+{% if stopsignal in item %}
+stopsignal={{ item.stopsignal }}
+{% endif %}
+{% if stopwaitsecs in item %}
+stopwaitsecs={{ item.stopwaitsecs }}
+{% endif %}
+{% if user in item %}
+user={{ item.user }}
+{% endif %}
+{% if redirect_stderr in item %}
+redirect_stderr={{ item.redirect_stderr }}
+{% endif %}
+{% if stdout_logfile in item %}
+stdout_logfile={{ item.stdout_logfile }}
+{% endif %}
+{% if stdout_logfile_maxbytes in item %}
+stdout_logfile_maxbytes={{ item.stdout_logfile_maxbytes }}
+{% endif %}
+{% if stdout_capture_maxbytes in item %}
+stdout_capture_maxbytes={{ item.stdout_capture_maxbytes }}
+{% endif %}
+{% if stdout_events_enabled in item %}
+stdout_events_enabled={{ item.stdout_events_enabled }}
+{% endif %}
+{% if stderr_logfile in item %}
+stderr_logfile={{ item.stderr_logfile }}
+{% endif %}
+{% if stderr_logfile_maxbytes in item %}
+stderr_logfile_maxbytes={{ item.stderr_logfile_maxbytes }}
+{% endif %}
+{% if stderr_logfile_backups in item %}
+stderr_logfile_backups={{ item.stderr_logfile_backups }}
+{% endif %}
+{% if stderr_capture_maxbytes in item %}
+stderr_capture_maxbytes={{ item.stderr_capture_maxbytes }}
+{% endif %}
+{% if stderr_events_enabled in item %}
+stderr_events_enabled={{ item.stderr_events_enabled }}
+{% endif %}
+{% if serverurl in item %}
+serverurl={{ item.serverurl }}
+{% endif %}
