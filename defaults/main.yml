@@ -1,0 +1,5 @@
+---
+
+supervisord_package: "supervisor"
+supervisord_conf_d: "/etc/supervisord.d"
+supervisord_programs: []

@@ -1,0 +1,24 @@
+---
+
+- name: Install Supervisord
+  package:
+    name="{{ supervisord_package }}"
+    state="present"
+
+- name: Install Main Config
+  template:
+    src="supervisord.conf.j2"
+    dest="/etc/supervisord.conf"
+    mode="0644"
+    owner="root"
+    group="root"
+
+- name: Configure Programs
+  template:
+    src="program.ini.j2"
+    dest="{{ supervisord_conf_d }}/{{ item.name }}.ini"
+    mode="0644"
+    owner="root"
+    group="root"
+  with_items: "{{ supervisord_programs }}"
+  notify: restart supervisord
