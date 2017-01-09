@@ -9,3 +9,13 @@
   service:
     name="supervisord"
     state="reloaded"
+
+- name: start supervisord
+  service:
+    name="supervisord"
+    state="started"
+
+- name: stop supervisord
+  service:
+    name="supervisord"
+    state="stopped"

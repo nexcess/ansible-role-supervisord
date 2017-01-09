@@ -2,4 +2,8 @@
 
 supervisord_package: "supervisor"
 supervisord_conf_d: "/etc/supervisord.d"
+supervisord_minfds: 1024
+supervisord_minprocs: 200
+supervisord_umask: "022"
+supervisord_directory: "/tmp"
 supervisord_programs: []

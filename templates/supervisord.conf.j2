@@ -5,8 +5,10 @@ logfile_maxbytes=50MB
 logfile_backups=10
 loglevel=info
 pidfile=/var/run/supervisord.pid
-minfds=1024
-minprocs=200
+minfds={{ supervisord_minfds }}
+minprocs={{ supervisord_minprocs }}
+umask={{ supervisord_umask }}
+directory={{ supervisord_directory }}
 
 [supervisorctl]
 serverurl=unix:///var/run/supervisor/supervisor.sock
