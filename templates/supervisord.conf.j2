@@ -10,8 +10,15 @@ minprocs={{ supervisord_minprocs }}
 umask={{ supervisord_umask }}
 directory={{ supervisord_directory }}
 
+[unix_http_server]
+file=/var/run/supervisor.sock
+chmod=0750
+
+[rpcinterface:supervisor]
+supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+
 [supervisorctl]
-serverurl=unix:///var/run/supervisor/supervisor.sock
+serverurl=unix:///var/run/supervisor.sock
 
 [include]
 files = supervisord.d/*.ini
