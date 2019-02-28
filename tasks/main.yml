@@ -13,6 +13,14 @@
     owner="root"
     group="root"
 
+- name: Install supervisord systemd script
+  template: 
+    src="supervisord.service.j2"
+    dest="/usr/lib/systemd/system/supervisord.service"
+    mode="0644"
+    owner="root"
+    group="root"
+
 - name: Configure Programs
   template:
     src="program.ini.j2"
