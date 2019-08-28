@@ -13,6 +13,20 @@
     owner="root"
     group="root"
 
+- name: Install supervisord systemd script
+  template: 
+    src="supervisord.service.j2"
+    dest="/usr/lib/systemd/system/supervisord.service"
+    mode="0644"
+    owner="root"
+    group="root"
+  register: systemd_script
+
+- name: Issue systemctl daemon-reload
+  systemd:
+    daemon-reload="yes"
+  when: systemd_script is changed
+
 - name: Configure Programs
   template:
     src="program.ini.j2"

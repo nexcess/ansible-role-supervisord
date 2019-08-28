@@ -7,3 +7,8 @@ supervisord_minprocs: 200
 supervisord_umask: "022"
 supervisord_directory: "/tmp"
 supervisord_programs: []
+supervisord_restartop: "on-failure"
+supervisord_startburst: 30
+supervisord_startinterval: 3
+supervisord_starttimeout: 10
+supervisord_stoptimeout: 5
